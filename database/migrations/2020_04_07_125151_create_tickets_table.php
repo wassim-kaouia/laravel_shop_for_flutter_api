@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateTicketsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+
     public function up()
     {
         Schema::create('tickets', function (Blueprint $table) {

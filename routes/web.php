@@ -1,5 +1,9 @@
 <?php
 
+use App\City;
+use App\State;
+use App\Country;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +25,20 @@ Route::get('/index', function(){
     return view('index');
 });
 
+//testing cities/states/countries:
 
+// Route::get('city',function(){
+//     return City::with(['state','country'])->paginate(50);
+// });
+
+// Route::get('country',function(){
+//     return Country::with(['states','cities'])->paginate(5);
+// });
+
+// Route::get('state',function(){
+//     return State::with(['cities','country'])->paginate(50);
+// });
+
+//end testing
 
 Route::get('/home', 'HomeController@index')->name('home');
