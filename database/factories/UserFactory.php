@@ -19,10 +19,25 @@ use Illuminate\Support\Str;
 
 $factory->define(User::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+        'first_name' => $faker->firstNameMale,
+        'last_name' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
+        'mobile' => $faker->phoneNumber,
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+        'shipping_address' => $faker->numberBetween(1,100),
+        'billing_address' => $faker->numberBetween(1,100),
+    ];
+});
+
+
+$factory->state(User::class,'user-admin',function($faker){
+    return [
+        'first_name' => 'wassim',
+        'last_name' => 'kaouia',
+        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi',
+        'email' => 'wassim@admin.com',
+        'mobile' => '0666162690',
     ];
 });

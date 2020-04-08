@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateReviewsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+ 
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
