@@ -23,7 +23,7 @@ Register
                                     <div class="col-7">
                                         <div class="text-primary p-4">
                                             <h5 class="text-primary">Free Register</h5>
-                                            <p>Get your free Skote account now.</p>
+                                            <p>Get your free account now.</p>
                                         </div>
                                     </div>
                                     <div class="col-5 align-self-end">
@@ -55,9 +55,19 @@ Register
                                         </div>
     
                                         <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror" value="{{old('name')}}" required name="name" id="username" placeholder="Enter username">
-                                            @error('name')
+                                            <label for="username">First Name</label>
+                                            <input type="text" class="form-control @error('fname') is-invalid @enderror" value="{{old('fname')}}" required name="fname" id="username" placeholder="Enter First Name">
+                                            @error('fname')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="username">Last Name</label>
+                                            <input type="text" class="form-control @error('lname') is-invalid @enderror" value="{{old('lname')}}" required name="lname" id="username" placeholder="Enter Last Name">
+                                            @error('lname')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -76,7 +86,17 @@ Register
 
                                         <div class="form-group">
                                             <label for="userpassword">Password</label>
-                                            <input id="password-confirm" type="password" name="password_confirmation" class="form-control @error('password') is-invalid @enderror" name="password" required placeholder="Enter password">
+                                            <input id="password-confirm" type="password" name="password_confirmation" class="form-control @error('password') is-invalid @enderror" required placeholder="Enter password">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="mobile">Mobile Phone</label>
+                                            <input type="text" class="form-control @error('mobile') is-invalid @enderror" value="{{old('mobile')}}" required name="mobile" id="mobile" placeholder="Enter Mobile">
+                                            @error('mobile')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
                                         </div>
 
                                         <div class="mt-4">
@@ -84,7 +104,7 @@ Register
                                         </div>
     
                                         <div class="mt-4 text-center">
-                                            <p class="mb-0">By registering you agree to the Skote <a href="#" class="text-primary">Terms of Use</a></p>
+                                            <p class="mb-0">By registering you agree to our platform <a href="#" class="text-primary">Terms of Use</a></p>
                                         </div>
     
                                     </form>

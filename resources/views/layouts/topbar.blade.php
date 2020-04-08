@@ -5,19 +5,23 @@
             <div class="navbar-brand-box">
                 <a href="index" class="logo logo-dark">
                     <span class="logo-sm">
-                        <img src="assets/images/logo.svg" alt="" height="22">
+                        {{-- <img src="assets/images/logo.svg" alt="" height="22"> --}}
+                        <h2>W</h2>
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-dark.png" alt="" height="17">
+                        {{-- <img src="assets/images/logo-dark.png" alt="" height="17"> --}}
+                        {{-- <h2>WassDev</h2> --}}
                     </span>
                 </a>
 
                 <a href="index" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="assets/images/logo-light.svg" alt="" height="22">
+                        {{-- <img src="assets/images/logo-light.svg" alt="" height="22"> --}}
+                        
                     </span>
                     <span class="logo-lg">
-                        <img src="assets/images/logo-light.png" alt="" height="19">
+                        {{-- <img src="assets/images/logo-light.png" alt="" height="19"> --}}
+                        V0.1
                     </span>
                 </a>
             </div>
@@ -159,7 +163,7 @@
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg"
                         alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ml-1">Henry</span>
+                    <span class="d-none d-xl-inline-block ml-1">{{ Auth::user()->first_name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-right">

@@ -51,6 +51,8 @@
     @include('layouts.right-sidebar')
     <!-- END Right Sidebar -->
 
-    @include('layouts.footer-script')    
+    @include('layouts.footer-script')        
+
+
     </body>
 </html>

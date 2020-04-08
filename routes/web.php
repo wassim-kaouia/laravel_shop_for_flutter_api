@@ -15,15 +15,11 @@ use App\Country;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
 
-Route::get('/index', function(){
+Route::get('/', function(){
     return view('index');
-});
+})->middleware('auth');
 
 //testing cities/states/countries:
 
@@ -41,4 +37,15 @@ Route::get('/index', function(){
 
 //end testing
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('logout',function(){
+    return redirect()->route('login');
+});
+
+
+Auth::routes();
+
+
+
+Route::group(['middleware' => ['auth']], function () {
+    
+});

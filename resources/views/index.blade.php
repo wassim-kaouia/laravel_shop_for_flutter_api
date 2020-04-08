@@ -42,8 +42,8 @@ Light Sidebar
                                                 <div class="avatar-md profile-user-wid mb-4">
                                                     <img src="assets/images/users/avatar-1.jpg" alt="" class="img-thumbnail rounded-circle">
                                                 </div>
-                                                <h5 class="font-size-15 text-truncate">Henry Price</h5>
-                                                <p class="text-muted mb-0 text-truncate">UI/UX Designer</p>
+                                                <h5 class="font-size-15 text-truncate">{{ Auth::user()->first_name }}</h5>
+                                                <p class="text-muted mb-0 text-truncate">Role: Admin</p>
                                             </div>
 
                                             <div class="col-sm-8">

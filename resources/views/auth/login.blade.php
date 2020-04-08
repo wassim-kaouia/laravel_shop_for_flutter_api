@@ -22,7 +22,7 @@ Login
                                 <div class="col-7">
                                     <div class="text-primary p-4">
                                         <h5 class="text-primary">Welcome Back !</h5>
-                                        <p>Sign in to continue to Skote.</p>
+                                        <p>Sign in to continue to the platform.</p>
                                     </div>
                                 </div>
                                 <div class="col-5 align-self-end">
@@ -44,8 +44,8 @@ Login
                             <form class="form-horizontal" method="POST" action="{{ route('login') }}">
                                 @csrf
                                     <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" @if(old('email')) value="{{ old('email') }}" @else value="admin@themesbrand.com" @endif id="username" placeholder="Enter username" autocomplete="email" autofocus>
+                                        <label for="username">Email</label>
+                                        <input name="email" type="email" class="form-control @error('email') is-invalid @enderror" @if(old('email')) value="{{ old('email') }}" @else value="" @endif id="username" placeholder="Enter Email" autocomplete="email" autofocus>
                                         @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@ Login
 
                                     <div class="form-group">
                                         <label for="userpassword">Password</label>
-                                        <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" id="userpassword" value="123456" placeholder="Enter password">
+                                        <input type="password" name="password" class="form-control  @error('password') is-invalid @enderror" id="userpassword"  placeholder="Enter password">
                                         @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
