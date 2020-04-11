@@ -65,4 +65,29 @@ class UserController extends Controller
 
         return redirect()->back();
    }
+
+
+   public function search(Request $request){
+        $paginationState = false;
+
+        $request->validate([
+            'user_search' => 'required',
+        ]);
+
+        $search = $request->input('user_search');
+
+        $user = User::where('first_name','like','%'.$search.'%')
+                      ->orWhere('email','like','%'.$search.'%')->get();
+        
+        if(count($user) > 0){
+            Session::flash('message','We Found Some Results !');
+            return view('customers.customers')->with([
+                'users' => $user,
+                'pagState' => $paginationState,
+            ]);
+        }else{
+        Session::flash('message','Nothing Found !');
+        return redirect()->route('users');
+        }
+   }
 }
