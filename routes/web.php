@@ -49,6 +49,17 @@ Auth::routes();
 Route::group(['middleware' => ['auth']], function () {
 
     //units 
-    
+    Route::get('units','UnitController@index')->name('units');
+    Route::post('units','UnitController@store');
+    Route::put('units','UnitController@update');
+    Route::delete('units','UnitController@delete');
+    Route::match(['get', 'post'],'search-units','UnitController@search')->name('search-units');
+
+    //users
+    Route::get('users','UserController@index')->name('users');
+    Route::post('users','UserController@store');
+    Route::put('users','UserController@update');
+    Route::delete('users','UserController@delete');
+    Route::get('users-search','UserController@search')->name('users-search');
     
 });

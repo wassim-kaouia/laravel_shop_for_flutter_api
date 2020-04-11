@@ -20,4 +20,8 @@ class Address extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function completed(){
+        return $this->street_name.' '.$this->street_number.', '.$this->country;
+    }
 }

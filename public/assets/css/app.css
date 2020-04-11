@@ -4211,3 +4211,18 @@ input[switch=dark]:checked + label {
   top: 12px;
 }
 
+.button-spans {
+  right: 10px;
+  top: 6px;
+  position: absolute;
+  font-size: 22px;
+}
+
+.button-spans span:first-child {
+  margin-right: 10px;
+}
+
+.btn-pos {
+  top: 10px;
+}
+

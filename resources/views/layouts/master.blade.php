@@ -9,6 +9,7 @@
         <meta content="Themesbrand" name="author" />
         <!-- App favicon -->
         <link rel="shortcut icon" href="{{ URL::asset('assets/images/favicon.ico')}}">
+        
         @include('layouts.head')
     </head>
 
@@ -35,6 +36,8 @@
             <!-- Start right Content here -->
             <!-- ============================================================== -->
             <div class="main-content">
+                @include('sweetalert::alert')
+        
             <div class="page-content">
                 <div class="container-fluid">
                     @yield('content')

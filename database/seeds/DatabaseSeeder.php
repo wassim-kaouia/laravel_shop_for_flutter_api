@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Unit::class,4)->create();
+        factory(Unit::class,30)->create();
         factory(Product::class,100)->create();
         factory(Image::class,200)->create();
         factory(Address::class,100)->create();

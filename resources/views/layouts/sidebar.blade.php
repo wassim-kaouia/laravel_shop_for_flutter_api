@@ -19,7 +19,7 @@
                 </li>
 
                 <li>
-                    <a href="calendar" class=" waves-effect">
+                    <a href="{{ route('users') }}" class=" waves-effect">
                         <i class="bx bxs-contact"></i>
                         <span>Customers</span>
                     </a>
@@ -88,7 +88,7 @@
                         <span>Shop Settings</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="ecommerce-products">Units</a></li>
+                        <li><a href="{{ route('units') }}">Units</a></li>
                         <li><a href="ecommerce-product-detail">Cities</a></li>
                         <li><a href="ecommerce-orders">States</a></li>
                         <li><a href="ecommerce-customers">Countries</a></li>

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Role;
 use App\Order;
 use App\Address;
 use App\Payment;
@@ -49,6 +50,10 @@ class User extends Authenticatable
    
     public function wishlist(){
         return $this->hasOne(Wishlist::class);
+    }
+
+    public function roles(){
+        return $this->belongsToMany(Role::class);
     }
 
 
