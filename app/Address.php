@@ -24,4 +24,5 @@ class Address extends Model
     public function completed(){
         return $this->street_name.' '.$this->street_number.', '.$this->country;
     }
+
 }

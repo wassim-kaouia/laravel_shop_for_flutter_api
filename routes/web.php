@@ -17,7 +17,7 @@ use App\Country;
 
 
 
-Route::get('/', function(){
+Route::get('/index', function(){
     return view('index');
 })->middleware('auth');
 
@@ -60,6 +60,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::post('users','UserController@store');
     Route::put('users','UserController@update');
     Route::delete('users','UserController@delete');
+    Route::get('users/{id}','UserController@profile')->name('users-profile');
     Route::get('users-search','UserController@search')->name('users-search');
     
 });

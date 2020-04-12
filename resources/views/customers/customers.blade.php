@@ -88,7 +88,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <span class="button-spans">
-                                            <span class="span-edit" data-user-id="{{ $user->id }}"  data-street-name="">
+                                            <span class="span-edit" data-user-id="{{ $user->id }}">
                                                 <i class="mdi mdi-comment-edit text-primary"></i>
                                             </span>
                                             <span class="span-delete" data-user-id="{{ $user->id }}">
@@ -98,12 +98,12 @@
                                         <div class="media">
                                             <div class="avatar-md mr-4">
                                                 <span class="avatar-title rounded-circle bg-light text-danger font-size-16">
-                                                    <img class="rounded-circle" src="{{ $user->profile_image }}" alt="" height="62">
+                                                    <img class="rounded-circle" src="{{ URL::asset($user->profile_image) }}"  alt="" height="62">
                                                 </span>
                                             </div>
 
                                             <div class="media-body overflow-hidden">
-                                                <h5 class="text-truncate font-size-15"><a href="#" class="text-dark">{{ $user->first_name }} {{ $user->last_name }}</a></h5>
+                                                <h5 class="text-truncate font-size-15"><a href="{{ route('users-profile',['id' => $user->id]) }}" class="text-dark">{{ $user->first_name }} {{ $user->last_name }}</a></h5>
                                                 <p class="text-muted mb-4">{{ $user->email }}</p>
                                                 <p class="text-muted mb-4">{{ $user->mobile }}</p>
                                                 <p class="text-muted mb-4">{{ (is_null($user->shippingAddress)) ? 'No Address Assigned ,Please Update to Put New Address' : $user->shippingAddress->completed() }}</p>
