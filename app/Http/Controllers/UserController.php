@@ -120,6 +120,7 @@ class UserController extends Controller
             'email'          => 'required',
             'password'       => 'required',
             'mobile'         => 'required',
+            'role-option'    => 'required',
 
             'streetName_s'   => 'required',
             'streetNumber_s' => 'required',
@@ -160,6 +161,7 @@ class UserController extends Controller
         
 
         $user            = User::findOrFail($id);
+        // $role            = Role::findOrFail($request->input('role-option'));
         $shippingAddress = $user->shippingAddress;
         $billingAddress  = $user->billingAddress;
 
@@ -172,6 +174,7 @@ class UserController extends Controller
         $user->email      = $email;
         $user->password   = $password;
         $user->mobile     = $mobile;
+        $user->roles()->sync([$request->input('role-option')]);
 
 
         if(is_null($user->shipping_address)){

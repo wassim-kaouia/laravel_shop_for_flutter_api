@@ -160,42 +160,7 @@
                         </div>
 
 
-   {{-- modal for update unit --}}
-    <div id="edit-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title mt-0" id="mySmallModalLabel">Assign Role</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                   <div class="container">
-                       <form action="{{ route('users') }}" method="POST">
-                           @csrf
-                           @method('PUT')
-                         
-                           <div class="form-group row">
-                            <label class="col-md-2 col-form-label">Select</label>
-                            <div class="col-md-10">
-                                <select class="form-control">
-                                    <option>Select</option>
-                                    <option>Large select</option>
-                                    <option>Small select</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <input type="hidden" name="unit_id_modal" id="unit_id_modal">
-                            <button type="submit" class="btn btn-outline-success btn-block waves-effect waves-light">Update Unit</button>                        
-                        </div>
-                       </form>
-                   </div>
-                </div>
-            </div><!-- /.modal-content -->
-        </div><!-- /.modal-dialog -->
-    </div><!-- /.modal -->
+
 
            {{-- modal for delete unit --}}
            <div id="delete-modal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">

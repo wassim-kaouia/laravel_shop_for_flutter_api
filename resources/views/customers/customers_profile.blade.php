@@ -219,7 +219,7 @@
                     <div class="form-group row mb-4">
                         <label for="password" class="col-form-label col-lg-2">Password</label>
                         <div class="col-lg-10">
-                            <input id="password" name="password" type="password" class="form-control" placeholder="New Password" required>
+                            <input id="password" name="password" type="password" class="form-control" placeholder="New Password">
                         </div>
                     </div>
 
@@ -247,7 +247,7 @@
                                     <option disabled>Current: {{ $role->role }}</option>
                                 @endforeach
                                 @foreach ($roles as $role)
-                                    <option value="{{ $role->role }}">{{ $role->role }}</option>
+                                    <option value="{{ $role->id }}">{{ $role->role }}</option>
                                 @endforeach
                             </select>
                         </div>

@@ -12,7 +12,7 @@
                 <li class="menu-title">Dashboards</li>
 
                 <li>
-                    <a href="calendar" class=" waves-effect">
+                    <a href="{{ route('roles') }}" class=" waves-effect">
                         <i class="bx bxs-briefcase"></i>
                         <span>Roles</span>
                     </a>

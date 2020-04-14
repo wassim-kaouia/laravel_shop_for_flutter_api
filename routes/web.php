@@ -71,5 +71,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('products','ProductController@delete');
     Route::get('products/{id}','ProductController@profile')->name('products-detail');
     Route::get('products-search','ProductController@search')->name('products-search');
+
+    //roles
+    Route::get('roles','RoleController@index')->name('roles');
+    Route::post('roles','RoleController@store');
+    Route::put('roles','RoleController@update');
+    Route::delete('roles','RoleController@delete');
+    Route::get('roles-search','RoleController@search')->name('roles-search');
+
     
 });
