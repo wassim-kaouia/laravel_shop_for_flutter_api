@@ -26,7 +26,7 @@
                 </li>
 
                 <li>
-                    <a href="calendar" class=" waves-effect">
+                    <a href="{{ route('products') }}" class=" waves-effect">
                         <i class="bx bxs-t-shirt"></i>
                         <span>Products</span>
                     </a>

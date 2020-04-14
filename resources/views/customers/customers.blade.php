@@ -98,7 +98,7 @@
                                         <div class="media">
                                             <div class="avatar-md mr-4">
                                                 <span class="avatar-title rounded-circle bg-light text-danger font-size-16">
-                                                    <img class="rounded-circle" src="{{ URL::asset($user->profile_image) }}"  alt="" height="62">
+                                                    <img class="rounded-circle" src="{{ URL::asset('storage/images/'.$user->profile_image) }}"  alt="" width="62" height="62">
                                                 </span>
                                             </div>
 

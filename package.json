@@ -52,6 +52,7 @@
         "datatables.net-select": "^1.2.5",
         "datatables.net-select-bs4": "^1.2.5",
         "dragula": "^3.7.2",
+        "dropify": "^0.2.2",
         "dropzone": "^5.5.1",
         "echarts": "^4.7.0",
         "flot-charts": "^0.8.3",

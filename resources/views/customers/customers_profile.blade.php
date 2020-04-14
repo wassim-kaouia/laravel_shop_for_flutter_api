@@ -5,6 +5,7 @@
 @section('body')
 <body data-topbar="dark" data-sidebar="light">
 @endsection
+
 @section('content')
 
 <div class="row">
@@ -27,7 +28,14 @@
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="avatar-md profile-user-wid mb-4">
-                            <img src="{{ URL::asset($users->profile_image) }}" alt="" class="img-thumbnail rounded-circle">
+                            <form action="{{route('users-image',['id' => $users->id]) }}" id="user-form-image"  method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <img style="width:62px;height:62px;overflow:hidden" id="image-user" src="{{ URL::asset('storage/images/'.$users->profile_image) }}" alt="" class="img-thumbnail rounded-circle">
+                                <input type="file" id="profile_pic" onchange="doAfterSelectImage(this)" style="display:none;">
+                                {{-- <div id="edit_profile_button">
+                                    <a href="#" class="text-danger">Edit Avatar</a>
+                                </div> --}}
+                            </form>
                         </div>
                         <h5 class="font-size-15 text-muted">{{ $users->first_name }} {{ $users->last_name }}</h5>
                         <p class="text-muted mb-0 text-truncate">
@@ -159,11 +167,33 @@
     <div class="col-lg-8">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Update Informations :</h4>
+                
+               <div class="mb-4">
+                <h4 class="card-title mb-3">Profile Image</h4>
+
+                <form action="{{ route('users-image',['id' => $users->id]) }}" id="mydropzone" method="post" class="dropzone">
+                    @csrf
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                    </div>
+
+                    <div class="dz-message needsclick">
+                        <div class="mb-3 text-center">
+                            <i class="display-4 text-muted bx bxs-cloud-upload"></i>
+                        </div>
+                        
+                        <h4 class="">Drop Profile Image here or click to upload.</h4>
+                    </div>
+                </form>
+               </div>
+                
                 <form action="{{ route('users') }}" method="POST">
                     @csrf
                     @method('PUT')
 
+        
+
+                    <h4 class="card-title mb-4">Update Informations :</h4>
                     
                     <div class="form-group row mb-4">
                         <label for="first_name" class="col-form-label col-lg-2">First Name</label>
@@ -376,6 +406,25 @@
 
 
 @section('script')
+
+<script src="{{ URL::asset('assets/libs/dropzone/dropzone.min.js')}}"></script>
+
+    <script>
+        Dropzone.options.mydropzone = {
+            maxFiles : 1,
+            acceptedFiles: 'image/*',
+            init: function(){
+                this.on('success',function(){
+                    if(this.getQueuedFiles().length == 0 && this.getUploadingFiles().length == 0 ){
+                        console.log('ok');
+                        location.reload();
+                    }
+                });
+            },
+        
+        };
+    </script>
+
     @if (Session::has('message'))
     <script>
         toastr.options = {
@@ -399,11 +448,7 @@
         @endif
     </script>
 
-    <script>
-        $(document).ready(function(){
-            
-        });
-    </script>
+
     
     
 @endsection

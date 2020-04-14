@@ -5,7 +5,7 @@ Light Sidebar
 @endsection
 
 @section('body')
-<body data-topbar="dark" data-sidebar="light">
+<body data-topbar="light" data-sidebar="dark">
 @endsection
 
 @section('content')
@@ -40,7 +40,7 @@ Light Sidebar
                                         <div class="row">
                                             <div class="col-sm-4">
                                                 <div class="avatar-md profile-user-wid mb-4">
-                                                    <img src="{{ URL::asset(Auth::user()->profile_image) }}" alt="" class="img-thumbnail rounded-circle">
+                                                    <img style="width:62px;height:62px;overflow:hidden"src="{{ URL::asset('storage/images/'.Auth::user()->profile_image) }}" width="62" height="62" alt="" class="img-thumbnail rounded-circle">
                                                 </div>
                                                 <h5 class="font-size-15 text-truncate">{{ Auth::user()->first_name }}</h5>
                                                 <p class="text-muted mb-0 text-truncate">Role: Admin</p>
@@ -60,7 +60,7 @@ Light Sidebar
                                                         </div>
                                                     </div>
                                                     <div class="mt-4">
-                                                        <a href="" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ml-1"></i></a>
+                                                        <a href="{{ route('users-profile',['id' => Auth::user()->id]) }}" class="btn btn-primary waves-effect waves-light btn-sm">View Profile <i class="mdi mdi-arrow-right ml-1"></i></a>
                                                     </div>
                                                 </div>
                                             </div>

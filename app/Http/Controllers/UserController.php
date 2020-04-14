@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Session;
 use App\Role;
 use App\User;
+use App\Image;
 use App\Address;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -224,5 +225,27 @@ class UserController extends Controller
         Session::flash('message','Informations Updated Sccuessfully !');
 
         return redirect()->back();
+   }
+
+
+   public function uploadProfileImage(Request $request,$id){
+        $user = User::findOrFail($id); 
+        $file = $request->hasFile('file');
+
+        if($file = $request->file('file'));
+
+        $filename = uniqid(). '.' . $file->getClientOriginalExtension();
+        $path = $file->StoreAs('public\images',$filename);
+
+        if($path){  
+            $user->profile_image = $filename;
+            $user->save();
+            Session::flash('message','Avatar Uploaded Successfully !');
+        }else{
+            Session::flash('Problem occurs while uploading new Avatar');
+        }
+        
+
+        
    }
 }

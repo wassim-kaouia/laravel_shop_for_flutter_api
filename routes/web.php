@@ -62,5 +62,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::delete('users','UserController@delete');
     Route::get('users/{id}','UserController@profile')->name('users-profile');
     Route::get('users-search','UserController@search')->name('users-search');
+    Route::post('users-upload-image/{id}','UserController@uploadProfileImage')->name('users-image');
+
+    //products
+    Route::get('products','ProductController@index')->name('products');
+    Route::post('products','ProductController@store');
+    Route::put('products','ProductController@update');
+    Route::delete('products','ProductController@delete');
+    Route::get('products/{id}','ProductController@profile')->name('products-detail');
+    Route::get('products-search','ProductController@search')->name('products-search');
     
 });
